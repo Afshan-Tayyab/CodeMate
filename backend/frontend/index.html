@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CodeMate - Code Analyzer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        💻 CodeMate
+    </div>
+
+    <div class="nav-right">
+        Code Learning & Analysis Platform
+    </div>
+
+</header>
+
+
+<main class="container">
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>
+            CodeMate
+        </h1>
+
+        <p>
+            Analyze your code, understand its structure,
+            and learn what each part does.
+        </p>
+
+    </section>
+
+
+    <!-- CODE ANALYZER -->
+
+    <section class="analyzer-card">
+
+        <div class="controls">
+
+            <label for="language">
+                Programming Language
+            </label>
+
+            <select id="language">
+
+                <option value="python">
+                    Python
+                </option>
+
+                <option value="javascript">
+                    JavaScript
+                </option>
+
+                <option value="java">
+                    Java
+                </option>
+
+                <option value="cpp">
+                    C++
+                </option>
+
+                <option value="c">
+                    C
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="editor-area">
+
+            <div class="editor-header">
+
+                <span>
+                    Code Editor
+                </span>
+
+                <span id="lineCount">
+                    0 lines
+                </span>
+
+            </div>
+
+
+            <textarea
+                id="codeInput"
+                placeholder="Paste or write your code here..."
+            ></textarea>
+
+        </div>
+
+
+        <div class="buttons">
+
+            <button
+                id="analyzeButton"
+                class="primary-button"
+            >
+                🔍 Analyze Code
+            </button>
+
+
+            <button
+                id="clearButton"
+                class="secondary-button"
+            >
+                Clear
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ANALYSIS RESULT -->
+
+    <section
+        id="resultSection"
+        class="result-section hidden"
+    >
+
+        <h2>
+            📊 Code Analysis
+        </h2>
+
+
+        <div class="stats">
+
+
+            <div class="stat-card">
+
+                <span class="stat-icon">
+                    📝
+                </span>
+
+                <h3 id="linesResult">
+                    0
+                </h3>
+
+                <p>
+                    Lines
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-icon">
+                    🔧
+                </span>
+
+                <h3 id="functionsResult">
+                    0
+                </h3>
+
+                <p>
+                    Functions
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-icon">
+                    🔁
+                </span>
+
+                <h3 id="loopsResult">
+                    0
+                </h3>
+
+                <p>
+                    Loops
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-icon">
+                    📦
+                </span>
+
+                <h3 id="variablesResult">
+                    0
+                </h3>
+
+                <p>
+                    Variables
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SYNTAX -->
+
+        <div class="status-card">
+
+            <h3>
+                Syntax Status
+            </h3>
+
+            <p id="syntaxResult">
+                -
+            </p>
+
+        </div>
+
+
+        <!-- CODE EXPLANATION -->
+
+        <div class="explanation-card">
+
+            <h2>
+                💡 Code Explanation
+            </h2>
+
+
+            <div id="explanationContainer">
+
+                <p>
+                    Your code explanation will appear here.
+                </p>
+
+            </div>
+
+
+            <div class="overall-card">
+
+                <h3>
+                    🧠 What does this program do?
+                </h3>
+
+                <p id="overallExplanation">
+                    -
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ERRORS -->
+
+        <div
+            id="errorCard"
+            class="error-card hidden"
+        >
+
+            <h3>
+                ⚠ Errors
+            </h3>
+
+            <ul id="errorList"></ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- HISTORY -->
+
+    <section class="history-section">
+
+        <div class="history-header">
+
+            <h2>
+                🕐 Analysis History
+            </h2>
+
+
+            <button
+                id="refreshHistory"
+                class="secondary-button"
+            >
+                Refresh
+            </button>
+
+        </div>
+
+
+        <div id="historyContainer">
+
+            <p class="empty-message">
+                No analysis history yet.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+
+    <p>
+        CodeMate © 2026 | Built with Python,
+        FastAPI, JavaScript and SQLite
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
