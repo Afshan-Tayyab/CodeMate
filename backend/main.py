@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import ast
@@ -13,6 +15,12 @@ from database import (
 
 
 app = FastAPI(title="CodeMate API")
+app.mount("/static", StaticFiles(directory="frontend"), name="static")
+
+
+@app.get("/")
+def home():
+    return FileResponse("frontend/index.html")
 
 
 app.add_middleware(
